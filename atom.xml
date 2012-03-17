@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>alexey prohorenko's words</title>
+ <link href="http://words.alexeypro.com/atom.xml" rel="self"/>
+ <link href="http://words.alexeypro.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://words.alexeypro.com/</id>
+ <author>
+   <name>Alexey Prohorenko</name>
+   <email>ap@alexeypro.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://words.alexeypro.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://words.alexeypro.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
