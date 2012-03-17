@@ -3,6 +3,6 @@ layout: default
 ---
 {% for post in site.posts %}
     {% capture post_date %}{{ post.date | date: "%m/%d/%Y" }}{% endcapture %}
-    {{ post_date }}&nbsp;&nbsp;<strong>{{ post.title }}</strong>&nbsp;<a href="{{ post.url }}" class="as" title="Permanent link to: '{{ post.title }}'">&raquo;</a><br/>
+    {{ post_date }}&nbsp;&nbsp;<strong>{{ post.title }}</strong>&nbsp;<a href="{{ post.url }}" class="as" title="Permanent link to: '{{ post.title }}'">&nbsp;&raquo;&nbsp;</a><br/>
 {% endfor %}
 <br/>
